@@ -16,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/wjxalexander/J-UI-React/issues"
   },
-  "homepage": "https://github.com/wjxalexander/J-UI-React#readme"
+  "homepage": "https://github.com/wjxalexander/J-UI-React#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
