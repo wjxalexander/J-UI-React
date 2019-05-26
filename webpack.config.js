@@ -7,7 +7,7 @@ module.exports = {
     index: "./lib/index.tsx"
   },
   output: {
-    filename: "bundle.js",
+    filename: "index.js",
     /* __dirname: current folder
      *path: __dirname + "/dist" 不能使用的原因是
      *多操作系统对路径的定义是不同的windows为\Mac为/
