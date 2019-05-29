@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  // mode: "development",
   // program entry
   entry: {
     index: "./lib/index.tsx"
@@ -31,11 +31,11 @@ module.exports = {
   },
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",
-  
+
   /*These options change how modules are resolved. */
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".json",".jsx"]
+    extensions: [".ts", ".tsx", ".js", ".json", ".jsx"]
   },
   module: {
     rules: [
@@ -48,33 +48,30 @@ module.exports = {
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
-  },
-  // 外部库 打包时不包含react
-  externals:{
-    react:{
-      // 针对历史上各种打包工具 引入react时react怎么写的
-      commonjs: 'react',// var react = require("react")
-      commonjs2: 'react',
-      amd: 'react',
-      // 针对 <script src="xxxx/react.min.js/> window.React"
-      root: "React"
-    },
-    'react-dom':{
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'react-dom',
-      root: "ReactDOM"
-    }
   }
+  // 外部库 打包时不包含react
 
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    react: "React",
-    "react-dom": "ReactDOM"
-  },
+  // externals:{
+  //   react:{
+  //     // 针对历史上各种打包工具 引入react时react怎么写的
+  //     commonjs: 'react',// var react = require("react")
+  //     commonjs2: 'react',
+  //     amd: 'react',
+  //     // 针对 <script src="xxxx/react.min.js/> window.React"
+  //     root: "React"
+  //   },
+  //   'react-dom':{
+  //     commonjs: 'react-dom',
+  //     commonjs2: 'react-dom',
+  //     amd: 'react-dom',
+  //     root: "ReactDOM"
+  //   }
+  // },
+
   /*The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles.
    This is especially useful for webpack bundles that include a hash in the filename which 
    changes every compilation. You can either let the plugin generate an HTML file for you, 
@@ -82,7 +79,7 @@ module.exports = {
    https://github.com/jantimon/html-webpack-plugin#options
    简单来说就是帮你在index.html中自动加入<script src="index.js"></script>
    */
-  plugins: [
-    new HtmlWebpackPlugin({ title: "J-UI-React", template: "index.html" })
-  ]
+  // plugins: [
+  //   new HtmlWebpackPlugin({ title: "J-UI-React", template: "index.html" })
+  // ]
 };
