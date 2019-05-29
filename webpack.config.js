@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     index: "./lib/index.tsx"
   },
+
   output: {
     filename: "index.js",
     /* __dirname: current folder
@@ -22,17 +23,19 @@ module.exports = {
     add libraryTarget property to the config. 
     This will add the different options about how the library can be exposed.
     umd: 历史问题包管理系统 requirejs amd：browser环境
-    异步模块定义 commonjs ...
-    nodejs: module.export 就是webpack 写法
+    异步模块定义 commonjs  module.export...
+    nodejs: commonjs： module.export 就是webpack 写法
     umd：if define use define else use module else script
     */
     libraryTarget: "umd"
   },
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",
+  
+  /*These options change how modules are resolved. */
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".json",".jsx"]
   },
   module: {
     rules: [
@@ -46,6 +49,23 @@ module.exports = {
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
+  // 外部库 打包时不包含react
+  externals:{
+    react:{
+      // 针对历史上各种打包工具 引入react时react怎么写的
+      commonjs: 'react',// var react = require("react")
+      commonjs2: 'react',
+      amd: 'react',
+      // 针对 <script src="xxxx/react.min.js/> window.React"
+      root: "React"
+    },
+    'react-dom':{
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+      root: "ReactDOM"
+    }
+  }
 
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
