@@ -1,6 +1,7 @@
 import * as React from "react";
 interface IconProps {
     iconName: string;
+    className?: string;
 }
 // Icon 是一个React的函数式组件，他的类型是IconProps, props:IconProps+children
 const Icon: React.FunctionComponent<IconProps> = (props)=>{
