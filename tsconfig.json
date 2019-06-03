@@ -36,6 +36,7 @@
       "examples/**/*",
       "types/**/*",
       "test/**/*"
+      // ** 任何字符串 中间任何文件目录都是 ** 不管多少层
     ],
     "exclude": [
       "node_modules",

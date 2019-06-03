@@ -35,7 +35,12 @@ module.exports = {
   /*These options change how modules are resolved. */
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".json", ".jsx"]
+    extensions: [".ts", ".tsx", ".js", ".json", ".jsx"],
+    alias: {
+      "@": path.resolve(__dirname, 'src'),
+      "SvgRepo": path.resolve(__dirname, 'IconRepository')
+    }
+
   },
   module: {
     rules: [
@@ -43,6 +48,10 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader"
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
       },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
