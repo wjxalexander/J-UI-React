@@ -12,7 +12,7 @@ module.exports = {
   reporters: ["default"],
   globals: {
     "ts-jest": {
-      tsConfig: "tsconfig.test.json"
+      tsConfig: "test.json"
     }
   },
   moduleDirectories: ["node_modules", "include"],
