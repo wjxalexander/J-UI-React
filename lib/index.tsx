@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import Icon, {createFromIconFont} from "./Icon/icon";
 import "./style.scss"
-createFromIconFont("/lib/iconfont.js");
+
+createFromIconFont("http://at.alicdn.com/t/font_944669_yny5xllmics.js");
 
 const fn: React.MouseEventHandler<HTMLOrSVGElement> = (e) => {
     console.log(e.target);
@@ -18,8 +19,9 @@ ReactDOM.render((<div>
           onMouseLeave={(e) => console.log(e.target, "mouseLeave")}
     />
     <Icon iconName="AdminALogo32" USEMsFabricIcon onClick={fn}/>
-    <Icon iconName="i-loading" onClick={fn}/>
-    <Icon iconName="i-movie" onClick={fn}/>
+    <Icon iconName="i-loading" onClick={fn} className="custom"/>
+    <Icon iconName="i-movie" onClick={fn} onMouseLeave={(e) => console.log(e.target, "mouseLeave")}
+    />
 
 
 </div>), document.querySelector("#root"));

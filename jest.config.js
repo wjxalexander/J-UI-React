@@ -12,7 +12,7 @@ module.exports = {
   reporters: ["default"],
   globals: {
     "ts-jest": {
-      tsConfig: "test.json"
+      tsConfig: "tsconfig.icon.scss.json"
     }
   },
   moduleDirectories: ["node_modules", "include"],
@@ -22,11 +22,11 @@ module.exports = {
     "\\.(css|less|sass|scss)$": "<rootDir>/test/__mocks__/object-mock.js"
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
-  testMatch: [ "<rootDir>**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
+  testMatch: [ "<rootDir>**/__tests__/**/*.unit.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
   transform: {
     "^.+unit\\.(js|jsx)$": "babel-jest",
-    //   '^.+\\.(ts|tsx)$': 'ts-jest',
-    "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
+      '^.+\\.(ts|tsx)$': 'ts-jest',
+    // "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
   },
 
   setupFilesAfterEnv: ["<rootDir>test/setupTests.js"]

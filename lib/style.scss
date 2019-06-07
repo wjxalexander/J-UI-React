@@ -1,7 +1,12 @@
-.icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
+.custom{
+  fill:red;
+  animation: ani 4s linear infinite;
+  @keyframes ani {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
