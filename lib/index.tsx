@@ -4,13 +4,18 @@ import Icon from "./Icon/icon";
 
 const fn: React.MouseEventHandler<HTMLOrSVGElement> = (e) => {
     console.log(e.target);
-}
-
+};
 
 ReactDOM.render((<div>
-    <Icon iconName="wechat" onClick={fn}/>
-    <Icon iconName="Accept" USEMsFabicIcon onClick={fn}/>
-    <Icon iconName="AdminALogo32" USEMsFabicIcon onClick={fn}/>
+    <Icon iconName="wechat" onClick={fn}
+          onMouseEnter={(e)=>console.log(e.target,"mouseEnter")}
+          onMouseLeave={(e)=>console.log(e.target,"mouseLeave")}
+    />
+    <Icon iconName="Accept" USEMsFabricIcon onClick={fn}
+          onMouseEnter={(e)=>console.log(e.target,"mouseEnter")}
+          onMouseLeave={(e)=>console.log(e.target,"mouseLeave")}
+    />
+    <Icon iconName="AdminALogo32" USEMsFabricIcon onClick={fn}/>
 
 </div>), document.querySelector("#root"));
 
