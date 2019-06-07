@@ -4,6 +4,7 @@ import cls from "classnames";
 import "./utils/importAllIcons.js";
 import "./fabicIcons/fabric-icons-inline.scss"
 import "./test.scss"
+
 /*所有的Onxx 响应全部在 extends里面了 可点击看react源码 这里因为会是SVG或者html元素 因此元素<T>是HTMLOrSVGElement
  * 最终传给DOMAttributes<T>
  */
@@ -14,7 +15,8 @@ interface IconProps extends React.SVGAttributes<HTMLOrSVGElement>, React.HTMLAtt
 }
 
 const customCache = new Set<string>();
-export function createFromIconFont(scripts:string=""):void {
+
+export function createFromIconFont(scripts: string = ""): void {
     if (
         typeof document !== 'undefined' &&
         typeof window !== 'undefined' &&
@@ -24,12 +26,14 @@ export function createFromIconFont(scripts:string=""):void {
         !customCache.has(scripts)
     ) {
         const script = document.createElement('script');
+        script.setAttribute('type', "text/javascript");
         script.setAttribute('src', scripts);
         script.setAttribute('data-namespace', scripts);
         customCache.add(scripts);
         document.body.appendChild(script);
     }
 }
+
 // 为什么在JSX中使用...运算符需要加{} 因为他是JS语法，JSX规定需要加{}
 const SvgComponent: React.FunctionComponent<IconProps> = (({iconName, className, ...restProps}) => {
     return (<svg className={cls("J-UI-Icon", className)} {...restProps}>
