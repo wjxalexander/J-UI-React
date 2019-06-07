@@ -3,7 +3,7 @@
 */
 @font-face {
   font-family: 'FabricMDL2Icons';
-  src: url('./fabric-icons-ad4a8d1c.woff') format('woff');
+  src: url('fabric-icons-ad4a8d1c.woff') format('woff');
 }
 
 .ms-Icon {

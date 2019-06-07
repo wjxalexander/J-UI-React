@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import Icon from "./Icon/icon";
+import Icon, {createFromIconFont} from "./Icon/icon";
+
+createFromIconFont("./iconfont.js");
 
 const fn: React.MouseEventHandler<HTMLOrSVGElement> = (e) => {
     console.log(e.target);
@@ -8,12 +10,12 @@ const fn: React.MouseEventHandler<HTMLOrSVGElement> = (e) => {
 
 ReactDOM.render((<div>
     <Icon iconName="wechat" onClick={fn}
-          onMouseEnter={(e)=>console.log(e.target,"mouseEnter")}
-          onMouseLeave={(e)=>console.log(e.target,"mouseLeave")}
+          onMouseEnter={(e) => console.log(e.target, "mouseEnter")}
+          onMouseLeave={(e) => console.log(e.target, "mouseLeave")}
     />
     <Icon iconName="Accept" USEMsFabricIcon onClick={fn}
-          onMouseEnter={(e)=>console.log(e.target,"mouseEnter")}
-          onMouseLeave={(e)=>console.log(e.target,"mouseLeave")}
+          onMouseEnter={(e) => console.log(e.target, "mouseEnter")}
+          onMouseLeave={(e) => console.log(e.target, "mouseLeave")}
     />
     <Icon iconName="AdminALogo32" USEMsFabricIcon onClick={fn}/>
 
