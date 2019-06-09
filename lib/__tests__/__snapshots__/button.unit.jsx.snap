@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`button test is a div 1`] = `
-<div>
-  234
-</div>
-`;
