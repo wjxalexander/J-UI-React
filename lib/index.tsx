@@ -18,7 +18,7 @@ ReactDOM.render((<div>
           onMouseEnter={(e) => console.log(e.target, "mouseEnter")}
           onMouseLeave={(e) => console.log(e.target, "mouseLeave")}
     />
-    <Icon iconName="AdminALogo32" USEMsFabricIcon onClick={fn}/>
+    <Icon iconName="AdminALogo32" USEMsFabricIcon className="custom" onClick={fn}/>
     <Icon iconName="i-loading" onClick={fn} className="custom"/>
     <Icon iconName="i-movie" onClick={fn} onMouseLeave={(e) => console.log(e.target, "mouseLeave")}
     />

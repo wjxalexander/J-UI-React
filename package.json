@@ -8,7 +8,9 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
-    "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js"
+    "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js",
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js",
+    "ceshi": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -33,8 +35,11 @@
     "babel-jest": "^24.8.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
+    "jest-css-modules": "^2.1.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "react-test-renderer": "^16.8.6",
