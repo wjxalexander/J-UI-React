@@ -1,4 +1,3 @@
-
 #https://github.com/revolunet/create-react-app-circleci/blob/master/.circleci/config.yml
 defaults: &defaults   #默认使用原来的默认之
   docker:
@@ -34,6 +33,9 @@ jobs: #三个job 准备 build test
           root: .
           paths:
             - dist
+            - package.json
+            - LICENCE
+            - README.md
   test:
     <<: *defaults
     steps:
@@ -43,7 +45,12 @@ jobs: #三个job 准备 build test
       - run: yarn ci
       - store_test_results:
           path: test-results
-
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npm publish
 workflows: #work 流程
   version: 2
   build_accept_deploy:
@@ -55,3 +62,6 @@ workflows: #work 流程
       - test:
           requires:
             - prepare
+      - publish:
+          requires:
+            - build
