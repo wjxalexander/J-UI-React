@@ -50,7 +50,7 @@ jobs: #三个job 准备 build test
     steps:
       - attach_workspace:
           at: .
-      - run: npm config set registry https://registry.npmjs.org/:_authToken $NPM_TOKEN
+      - run: npm config set registry https://registry.npmjs.org/:_authToken $npm_token
       - run: npm publish
 
 workflows: #work 流程
