@@ -56,7 +56,7 @@ describe("icon test", () => {
     });
     it("outside svg onTouchCancel", () => {
         createFromIconFont("http://at.alicdn.com/t/font_891885_dszg7ff4by8.js")
-        const fakeFn = jest.fn()
+        const fakeFn = jest.fn();
         const component = mount(<Icon iconName="icon-history" onTouchCancel={fakeFn}/>);
         component.find('svg').simulate('touchcancel');
         expect(fakeFn).toBeCalled()

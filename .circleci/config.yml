@@ -30,8 +30,8 @@ jobs: #三个job 准备 build test
       - attach_workspace:
           at: .
       - run: yarn build
-      - persist_to_workspace:
           root: .
+      - persist_to_workspace:
           paths:
             - dist
   test:
