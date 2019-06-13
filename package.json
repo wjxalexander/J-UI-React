@@ -1,9 +1,10 @@
 {
-  "name": "J-UI-React",
-  "version": "1.0.0",
+  "name": "J-UI-React-test",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
+  "files": ["./dist"],
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
@@ -42,6 +43,7 @@
     "jest-junit": "^6.4.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",

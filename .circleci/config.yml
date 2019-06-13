@@ -44,7 +44,7 @@ jobs: #三个job 准备 build test
       - store_test_results:
           path: test-results
 
-workflows:
+workflows: #work 流程
   version: 2
   build_accept_deploy:
     jobs:
