@@ -17,7 +17,7 @@ jobs: #三个job 准备 build test
       - run: yarn install
       - save_cache: #保存缓存
           paths:
-            - node_modules #nodemodules快快照
+            - node_modules #snapshot
           key: v2-dependencies-{{ checksum "package.json" }}
       - persist_to_workspace:
           root: .
@@ -30,8 +30,8 @@ jobs: #三个job 准备 build test
       - attach_workspace:
           at: .
       - run: yarn build
-          root: .
       - persist_to_workspace:
+          root: .
           paths:
             - dist
   test:
