@@ -2,6 +2,7 @@
 **/.idea/
 /dist/*
 /node_modules
+/test-results
 # Logs
 logs
 *.log
