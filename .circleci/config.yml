@@ -24,19 +24,11 @@ jobs: #三个job 准备 build test
             - node_modules
   build:
     <<: *defaults
-    docker:
-      - image: circleci/node:10.0-browsers
     steps:
       - checkout
       - attach_workspace:
           at: .
       - run: yarn build
-      - run:
-            name: "Run Jest and Collect Coverage Reports"
-            command: jest --collectCoverage=true
-      - store_artifacts:
-            path: coverage
-
       - persist_to_workspace:
           root: .
           paths:
