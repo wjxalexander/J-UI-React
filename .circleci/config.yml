@@ -67,3 +67,8 @@ workflows: #work 流程
       - publish:
           requires:
             - build
+          filters:
+            tags:
+              only: /^v[0-9]+(\.[0-9]+)*$/
+            branches:
+              ignore: /.*/
