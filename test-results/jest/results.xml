@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="11" failures="0" time="5.684">
-  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-06-15T13:59:14" time="1.665" tests="1">
-    <testcase classname="hello sum" name="hello sum" time="0.004">
+<testsuites name="jest tests" tests="11" failures="0" time="4.841">
+  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-06-15T14:13:40" time="1.976" tests="1">
+    <testcase classname="hello sum" name="hello sum" time="0.005">
     </testcase>
   </testsuite>
-  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-06-15T13:59:14" time="2.006" tests="1">
-    <testcase classname="button test is a div" name="button test is a div" time="0.019">
+  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-06-15T14:13:40" time="2.01" tests="1">
+    <testcase classname="button test is a div" name="button test is a div" time="0.012">
     </testcase>
   </testsuite>
-  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-06-15T13:59:14" time="2.286" tests="9">
-    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.014">
+  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-06-15T14:13:40" time="2.255" tests="9">
+    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.013">
     </testcase>
     <testcase classname="icon test is a HTML" name="icon test is a HTML" time="0.001">
     </testcase>
-    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.04">
+    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.035">
     </testcase>
     <testcase classname="icon test onClick fabric" name="icon test onClick fabric" time="0.002">
     </testcase>
-    <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.003">
+    <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.002">
     </testcase>
     <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.002">
     </testcase>

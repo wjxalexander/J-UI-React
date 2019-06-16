@@ -43,8 +43,16 @@ jobs: #三个job 准备 build test
       - attach_workspace:
           at: .
       - run: yarn ci
-      - store_test_results:
-          path: test-results
+      - run:
+          name: Generate code coverage
+          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+
   publish:
     <<: *defaults
     steps:
