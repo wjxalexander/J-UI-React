@@ -1,5 +1,5 @@
 // https://jestjs.io/docs/en/configuration.html
-const base = require('./jest.config')
+const base = require('./jest.config');
 
 module.exports = Object.assign({},base,{
   collectCoverage:true,
@@ -8,6 +8,7 @@ module.exports = Object.assign({},base,{
   reporters: ["jest-junit"], // test results
   collectCoverageFrom: [
     "{lib,include}/**/*.{js,jsx,ts,tsx}",// all js.jsxtsxfiles  in lib
-    "!**/node_modules/**"
+    "!**/node_modules/**",
+      "!{lib,include}/index.{tsx,jsx,ts,js}"
   ]
 });
