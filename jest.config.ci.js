@@ -9,6 +9,6 @@ module.exports = Object.assign({},base,{
   collectCoverageFrom: [
     "{lib,include}/**/*.{js,jsx,ts,tsx}",// all js.jsxtsxfiles  in lib
     "!**/node_modules/**",
-      "!{lib,include}/index.{tsx,jsx,ts,js}"
+      // "!{lib,include}/index.{tsx,jsx,ts,js}"
   ]
 });
