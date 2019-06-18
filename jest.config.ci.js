@@ -3,7 +3,7 @@ const base = require('./jest.config');
 
 module.exports = Object.assign({},base,{
   collectCoverage:true,
-  coverageDirectory: "coverage",
+  coverageDirectory: "./coverage/",
   coverageReporters: ["text", "lcov"],
   reporters: ["jest-junit"], // test results
   collectCoverageFrom: [

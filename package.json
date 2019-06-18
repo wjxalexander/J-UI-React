@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js && codecov"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.8.0",
+    "codecov": "^3.5.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "enzyme": "^3.10.0",
