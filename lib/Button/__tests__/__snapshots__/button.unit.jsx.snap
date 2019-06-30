@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<button
+  className="j-ui-button-default-wrapper"
+  title="test"
+>
+  <div
+    className="j-ui-button-default-title"
+  >
+    test
+  </div>
+</button>
+`;
+
+exports[`Button renders correctly with secondaryTitle 1`] = `
+<button
+  className="j-ui-button-default-wrapper"
+>
+  <i
+    className="ms-Icon ms-Icon--accept J-UI-Icon j-ui-button-icon"
+  />
+  <div
+    className="j-ui-button-default-title"
+  >
+    button
+  </div>
+  <div
+    className="j-ui-button-default-secondaryText"
+  >
+    test1111
+  </div>
+</button>
+`;
+
+exports[`Button renders correctly withIcon 1`] = `
+<button
+  className="j-ui-button-default-wrapper"
+  title="test"
+>
+  <i
+    className="ms-Icon ms-Icon--accept J-UI-Icon j-ui-button-icon"
+  />
+  <div
+    className="j-ui-button-default-title"
+  >
+    test
+  </div>
+</button>
+`;
+
+exports[`Button renders correctly withoutTitle 1`] = `
+<button
+  className="j-ui-button-default-wrapper"
+>
+  <i
+    className="ms-Icon ms-Icon--accept J-UI-Icon j-ui-button-icon"
+  />
+  <div
+    className="j-ui-button-default-title"
+  >
+    button
+  </div>
+</button>
+`;
