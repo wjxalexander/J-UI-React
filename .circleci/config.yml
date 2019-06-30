@@ -1,0 +1,74 @@
+#https://github.com/revolunet/create-react-app-circleci/blob/master/.circleci/config.yml
+defaults: &defaults   #默认使用原来的默认之
+  docker:
+    - image: circleci/node:8
+
+version: 2
+jobs: #三个job 准备 build test
+
+  prepare:
+    <<: *defaults
+    steps:
+      - checkout #迁出代码
+      - restore_cache: # 根据当前PAKAGE.JSON 创建MD5 以此作为key 创建缓存 缓存后执行下面的文件
+          keys:
+            - v2-dependencies-{{ checksum "package.json" }}  # MD5文件
+      - run: yarn install
+      - save_cache: #保存缓存
+          paths:
+            - node_modules #snapshot
+          key: v2-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist
+            - package.json
+            - LICENCE
+            - README.md
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: yarn ci
+      - store_test_results:
+          path: test-results
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npm config set //registry.npmjs.org/:_authToken $npm_token
+      - run: npm publish
+
+workflows: #work 流程
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - prepare
+      - build:
+          requires:
+            - test
+      - test:
+          requires:
+            - prepare
+      - publish:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v[0-9]+(\.[0-9]+)*$/
+            branches:
+              ignore: /.*/

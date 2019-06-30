@@ -1,14 +1,18 @@
 {
-  "name": "J-UI-React",
-  "version": "1.0.0",
+  "name": "j-ui-reactdemo1",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
+  "files": [
+    "./dist/**/*"
+  ],
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
-    "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js"
+    "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js && codecov"
   },
   "repository": {
     "type": "git",
@@ -31,12 +35,18 @@
     "@types/react-test-renderer": "^16.8.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.8.0",
+    "codecov": "^3.5.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
+    "jest-css-modules": "^2.1.0",
+    "jest-junit": "^6.4.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
@@ -51,9 +61,13 @@
   "dependencies": {
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
+    "@types/react-router": "^5.0.2",
+    "@types/react-router-dom": "^4.3.4",
     "@uifabric/styling": "^6.47.6",
     "classnames": "^2.2.6",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
   }
 }

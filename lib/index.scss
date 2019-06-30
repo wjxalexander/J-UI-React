@@ -1,0 +1,9 @@
+// 该选择器选择不到伪元素
+[class^=j-ui-]{
+  box-sizing: border-box;
+  // resolve solution
+  &::after,&::before
+  {
+    box-sizing: border-box;
+  }
+}

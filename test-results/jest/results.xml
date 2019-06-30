@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="17" failures="0" time="4.859">
+  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:16" time="1.869" tests="1">
+    <testcase classname="button test is a div" name="button test is a div" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:18" time="0.406" tests="1">
+    <testcase classname="hello sum" name="hello sum" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:16" time="2.545" tests="9">
+    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.015">
+    </testcase>
+    <testcase classname="icon test is a HTML" name="icon test is a HTML" time="0.001">
+    </testcase>
+    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.043">
+    </testcase>
+    <testcase classname="icon test onClick fabric" name="icon test onClick fabric" time="0.003">
+    </testcase>
+    <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.002">
+    </testcase>
+    <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.002">
+    </testcase>
+    <testcase classname="icon test onTouchCancel svg" name="icon test onTouchCancel svg" time="0.002">
+    </testcase>
+    <testcase classname="icon test outside svg" name="icon test outside svg" time="0.009">
+    </testcase>
+    <testcase classname="icon test outside svg onTouchCancel" name="icon test outside svg onTouchCancel" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:16" time="2.623" tests="6">
+    <testcase classname="Button renders correctly" name="Button renders correctly" time="0.014">
+    </testcase>
+    <testcase classname="Button renders correctly withIcon" name="Button renders correctly withIcon" time="0.001">
+    </testcase>
+    <testcase classname="Button renders correctly withoutTitle" name="Button renders correctly withoutTitle" time="0.001">
+    </testcase>
+    <testcase classname="Button renders correctly with secondaryTitle" name="Button renders correctly with secondaryTitle" time="0.001">
+    </testcase>
+    <testcase classname="Button onClick Button" name="Button onClick Button" time="0.034">
+    </testcase>
+    <testcase classname="Button onClick Button disabled" name="Button onClick Button disabled" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -56,24 +56,23 @@ module.exports = {
                 loader: 'svg-sprite-loader',
             },
             {
-                test: /\.s([ac])ss$/,
                 // 使用顺序：一个loader做一件事情，从右往左：sass-loader(将SCSS文件翻译成css)->css-loader将转译后的文件变成对象字符串->STYLE-LOADER这个对象变成<style>标签
+
+                test: /\.s([ac])ss$/,
                 use: [
-                    devMode ? 'style-loader' : {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            // publicPath: '../'
-                        }
-                    },
-                    'css-loader',
                     {
+                        loader: "style-loader"
+                    }, {
+                        loader: "css-loader"
+                    }, {
                         loader: "sass-loader",
                         options: {
                             includePaths: [path.resolve(__dirname, 'stylesheets', 'include')]
                         }
                     }]
             },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+
+// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {enforce: "pre", test: /\.js$/, loader: "source-map-loader"}
         ]
     }
