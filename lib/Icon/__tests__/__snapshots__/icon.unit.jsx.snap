@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon test MSFabric is a HTML 1`] = `
+<i
+  className="ms-Icon ms-Icon--AdminALogo32 J-UI-Icon"
+/>
+`;
+
+exports[`icon test is a svg 1`] = `
+<svg
+  className="J-UI-Icon"
+>
+  <use
+    xlinkHref="#wechat"
+  />
+</svg>
+`;
