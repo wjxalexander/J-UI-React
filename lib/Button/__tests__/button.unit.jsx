@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount} from 'enzyme';
+import {mount} from 'enzyme';
 import Button from '../button';
 import renderer from 'react-test-renderer'
 
@@ -13,9 +13,9 @@ describe('Button', () => {
   it('renders correctly withIcon', () => {
     const tree = renderer
       .create(<Button title="test" buttonType="default" iconProps={{iconName: "accept", USEMsFabricIcon: true}}/>)
-        .toJSON(); //虚拟dom是个对象
-        expect(tree).toMatchSnapshot()
-      });
+      .toJSON(); //虚拟dom是个对象
+    expect(tree).toMatchSnapshot()
+  });
   it('renders correctly withoutTitle', () => {
     const tree = renderer
       .create(<Button buttonType="default" iconProps={{iconName: "accept", USEMsFabricIcon: true}}/>)
@@ -24,7 +24,8 @@ describe('Button', () => {
   });
   it('renders correctly with secondaryTitle', () => {
     const tree = renderer
-      .create(<Button buttonType="default" iconProps={{iconName: "accept", USEMsFabricIcon: true}} secondaryText="test1111"/>)
+      .create(<Button buttonType="default" iconProps={{iconName: "accept", USEMsFabricIcon: true}}
+                      secondaryText="test1111"/>)
       .toJSON(); //虚拟dom是个对象
     expect(tree).toMatchSnapshot()
   });
@@ -40,4 +41,4 @@ describe('Button', () => {
     component.find('button').simulate('click')
     expect(fakeFn).not.toBeCalled()
   });
-  });
+});
