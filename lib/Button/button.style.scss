@@ -1,0 +1,72 @@
+@import "../_helper.scss";
+
+%default-style {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: $default_white;
+  font-family: inherit;
+  text-decoration: none;
+  border-style: none;
+  min-width: 80px;
+  max-width: 280px;
+  border-radius: 2px;
+  //min-height: 72px;
+  //height: auto;
+  height: 32px;
+  font-size: $default_fontsize;
+  font-weight: $default_fontweight;
+  cursor: pointer;
+  outline: none;
+}
+
+.j-ui-button {
+  &-default-wrapper {
+    @extend %default-style;
+    background-color: $default_color;
+    border: #000;
+
+    &:hover,
+    &:active {
+      background-color: $button_hover_color;
+    }
+  }
+;
+
+  &-custom-wrapper {
+    @extend %default-style;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+
+    &:hover,
+    &:active {
+      background-color: rgb(243, 242, 241);
+      color: rgb(32, 31, 30);
+    }
+  }
+;
+
+  &-secondaryText {
+    flex-grow: 1;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.j-ui-button-icon {
+  font-size: $default_fontsize;
+  margin: 0 4px;
+}
+
+button:disabled {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  cursor: not-allowed;
+  &:hover{
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+  }
+}

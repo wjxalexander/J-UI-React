@@ -8,7 +8,7 @@ import "./icon.scss"
 /*所有的Onxx 响应全部在DOMAttributes<T>中 extends里面了  可点击看react源码 这里因为会是SVG或者html元素 因此元素<T>是HTMLOrSVGElement
  * 最终传给DOMAttributes<T>
  */
-interface IconProps extends React.SVGAttributes<HTMLOrSVGElement>, React.HTMLAttributes<HTMLOrSVGElement> {
+export interface IconProps extends React.SVGAttributes<HTMLOrSVGElement>, React.HTMLAttributes<HTMLOrSVGElement> {
     iconName: string;
     className?: string;
     USEMsFabricIcon?: boolean

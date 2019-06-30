@@ -1,0 +1,55 @@
+@import "../helper";
+.j-ui-dialog {
+  &-container {
+    position: fixed;
+    background: #fff;
+    text-align: left;
+    max-height: 100%;
+    overflow-y: auto;
+    box-shadow: rgba(0, 0, 0, 0.22) 0 25.6px 57.6px 0, rgba(0, 0, 0, 0.18) 0 4.8px 14.4px 0;
+    width: auto;
+    max-width: 25em;
+    min-width: 20em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & .j-ui-dialog-close{
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 2em;
+      height: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        color: $hover_color;
+        border-radius: 2px;
+        background-color: $hover_background_color;
+      }
+    }
+  }
+    &-header{
+      font-size: 20px;
+      font-weight:600;
+      padding: 16px 46px 24px 24px;
+    }
+    &-main{
+
+    }
+    &-footer{
+
+    }
+
+
+
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: fade_out(#fff, 0.5);
+  }
+}

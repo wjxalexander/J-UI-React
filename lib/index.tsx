@@ -1,4 +1,5 @@
+import './index.scss'
+import Icon from "./Icon/icon";
 
-export {default as Icon} from "./Icon/icon";
-
+export {Icon}
 
