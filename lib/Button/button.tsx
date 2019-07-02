@@ -4,9 +4,8 @@ import Icon, {IconProps} from "../Icon/icon";
 import "./button.style.scss"
 import cls from "classnames"
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface buttonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  disabled?: boolean;
   title?: string;
   buttonType: "default" | "custom";
   iconProps?: IconProps;
@@ -15,10 +14,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const classGenerator = rootClass('j-ui-button');
 
-const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
-  const {buttonType,iconProps,secondaryText,disabled,...restProps} = props;
+const Button: React.FunctionComponent<buttonProps> = (props: buttonProps) => {
+  const {buttonType,iconProps,secondaryText,...restProps} = props;
   return (
-    <button {...restProps} className={classGenerator(`${buttonType}-wrapper`)} disabled={disabled}>
+    <button {...restProps} className={classGenerator(`${buttonType}-wrapper`)}>
       {iconProps ?
         <Icon {...iconProps} className={cls('j-ui-button-icon', iconProps.className)}/> : null}
       <div className={classGenerator(`${buttonType}-title`)}>

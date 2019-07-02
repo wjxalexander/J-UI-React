@@ -10,9 +10,11 @@
     width: auto;
     max-width: 25em;
     min-width: 20em;
+    padding: 16px 24px 24px 24px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     & .j-ui-dialog-close{
       position: absolute;
       top: 14px;
@@ -30,19 +32,28 @@
     }
   }
     &-header{
-      font-size: 20px;
+      font-size: 1.2em;
       font-weight:600;
-      padding: 16px 46px 24px 24px;
+      padding: 0 24px 24px 0;
     }
     &-main{
+      min-height: 6em;
 
     }
     &-footer{
-
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      min-height: 24px;
+      line-height: 24px;
+      margin: 16px 0 0;
+      span{
+        margin-left: 8px;
+      }
+      //font-size: 0px;
     }
-
-
-
 
   &-mask {
     position: fixed;

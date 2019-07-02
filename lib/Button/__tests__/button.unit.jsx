@@ -32,13 +32,13 @@ describe('Button', () => {
   it("onClick Button", () => {
     const fakeFn = jest.fn();
     const component = mount(<Button title="test" buttonType="default" onClick={fakeFn}/>);
-    component.find('button').simulate('click')
+    component.find('button').simulate('click');
     expect(fakeFn).toBeCalled()
   });
   it("onClick Button disabled", () => {
     const fakeFn = jest.fn();
     const component = mount(<Button title="test" buttonType="default" onClick={fakeFn} disabled/>);
-    component.find('button').simulate('click')
+    component.find('button').simulate('click');
     expect(fakeFn).not.toBeCalled()
   });
 });

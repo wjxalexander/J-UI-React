@@ -16,7 +16,7 @@
   //height: auto;
   height: 32px;
   font-size: $default_fontsize;
-  font-weight: $default_fontweight;
+  font-weight: $default_text_title_fontweight;
   cursor: pointer;
   outline: none;
 }
@@ -26,7 +26,6 @@
     @extend %default-style;
     background-color: $default_color;
     border: #000;
-
     &:hover,
     &:active {
       background-color: $button_hover_color;
@@ -36,7 +35,8 @@
 
   &-custom-wrapper {
     @extend %default-style;
-    border: 1px solid #000;
+
+    border: 1px solid $custom-border-color;
     background-color: #fff;
     color: #000;
 
