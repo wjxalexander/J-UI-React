@@ -3,8 +3,10 @@ import * as ReactDOM from "react-dom";
 import {HashRouter as Router, Route, Link} from "react-router-dom";
 import IconExample from "./examples/icon.example";
 import DialogExample from "./examples/dialog.example";
-import ButtonExample from "./examples/button.example"
+import ButtonExample from "./examples/button.example";
+import LayoutExample from "./examples/layout.example";
 import "./example.scss"
+
 ReactDOM.render((
   <Router>
     <header></header>
@@ -16,6 +18,8 @@ ReactDOM.render((
           <li><Link to="/button">Button</Link></li>
           <li><Link to="/dialog">Dialog</Link></li>
           <li><Link to="/button">Button</Link></li>
+          <li><Link to="/layout">Layout</Link></li>
+
 
         </ul>
       </aside>
@@ -23,6 +27,7 @@ ReactDOM.render((
         <Route path="/icon" component={IconExample}/>
         <Route path="/dialog" component={DialogExample}/>
         <Route path="/button" component={ButtonExample}/>
+        <Route path="/layout" component={LayoutExample}/>
 
       </main>
     </div>

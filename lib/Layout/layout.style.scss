@@ -1,0 +1,21 @@
+@import "../_helper";
+.j-ui-layout{
+  display: flex;
+  flex-direction: column;
+  &.topSideBar{
+    flex-direction: row;
+    .j-ui-layout{
+      flex-direction: column;
+    }
+  }
+
+  &-content{
+    flex-grow: 1;
+  }
+  & &{
+    flex-grow: 1;
+    flex-direction: row;
+  }
+
+  border: 1px solid red;
+}
