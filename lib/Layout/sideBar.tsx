@@ -13,7 +13,7 @@ const SideBar: React.FunctionComponent<layoutSideBarProps> = (props) => {
 
   return (
     <div className={cls(sc('side-bar'),className)} {...restProps}>
-      SideBar
+      {props.children}
     </div>
   );
 };

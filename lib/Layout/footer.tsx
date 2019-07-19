@@ -13,7 +13,7 @@ const Footer: React.FunctionComponent<layoutFooterProps> = (props) => {
 
   return (
     <div className={cls(sc('footer'),className)} {...restProps}>
-
+      {props.children}
     </div>
   );
 };

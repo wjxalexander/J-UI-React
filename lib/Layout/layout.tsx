@@ -13,9 +13,10 @@ interface layoutProps extends React.HTMLAttributes<HTMLElement> {
 const Layout: React.FunctionComponent<layoutProps> = (props) => {
     const {className, ...restProps} = props;
     const assertArray = (props.children as Array<ReactElement>);
+
+    // sideBar 判断第一层子元素
     const hasSideBar = assertArray.length &&
       assertArray.some(item => item.type == SideBar);
-
     return (
       <div className={cls(sc(), className, hasSideBar ? 'topSideBar' : null)} {...restProps}>
         {props.children}

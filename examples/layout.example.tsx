@@ -4,42 +4,43 @@ import Header from "../lib/Layout/header";
 import Footer from "../lib/Layout/footer";
 import Content from "../lib/Layout/content";
 import SideBar from "../lib/Layout/sideBar";
-
+import "./layout.example.scss";
 const LayoutExample = () => {
   return (
     <div>
       <h1>example 1</h1>
-      <Layout style={{height: 200}}>
-        <Header>1</Header>
-        <Content>2</Content>
-        <Footer>4</Footer>
-        <SideBar>4</SideBar>
+      <Layout style={{height: 200}} >
+        <Header className={"layoutOne"}>Header</Header>
+        <Content className={"layoutContent"}>Content</Content>
+        <Footer className={"layoutOne"}>Footer</Footer>
       </Layout>
       <h1>example 2</h1>
       <Layout style={{height: 200}}>
-        <Header>1</Header>
+        <Header className={"layoutOne"}>Header2</Header>
         <Layout>
-          <SideBar>4</SideBar>
-          <Content>2</Content>
+          <SideBar className={"layoutAside"}>Aside2</SideBar>
+          <Content className={"layoutContent"}>Content2</Content>
+          <SideBar className={"layoutAside"}>Aside2</SideBar>
+
         </Layout>
-        <Footer>4</Footer>
+        <Footer className={"layoutOne"}>4</Footer>
       </Layout>
       <h1>example 3</h1>
       <Layout style={{height: 200}}>
-        <Header>1</Header>
+        <Header className={"layoutOne"}>1</Header>
         <Layout>
-          <Content>2</Content>
-          <SideBar>4</SideBar>
+          <Content className={"layoutContent"}>2</Content>
+          <SideBar className={"layoutAside"}>4</SideBar>
         </Layout>
-        <Footer>4</Footer>
+        <Footer className={"layoutOne"}>4</Footer>
       </Layout>
       <h1>example 4</h1>
       <Layout style={{height: 200}}>
-        <SideBar>4</SideBar>
+        <SideBar className={"layoutAside"}>Aside</SideBar>
         <Layout>
-          <Header>1</Header>
-          <Content>2</Content>
-          <Footer>4</Footer>
+          <Header className={"layoutOne"}>1</Header>
+          <Content className={"layoutContent"}>2</Content>
+          <Footer className={"layoutOne"}>4</Footer>
         </Layout>
       </Layout>
     </div>

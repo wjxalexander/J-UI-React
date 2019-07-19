@@ -2,11 +2,11 @@
 .j-ui-layout{
   display: flex;
   flex-direction: column;
-  &.topSideBar{
+  .topSideBar{
     flex-direction: row;
-    .j-ui-layout{
-      flex-direction: column;
-    }
+    // .j-ui-layout{
+    //  flex-direction: column;
+    //}
   }
 
   &-content{
@@ -14,8 +14,5 @@
   }
   & &{
     flex-grow: 1;
-    flex-direction: row;
   }
-
-  border: 1px solid red;
 }

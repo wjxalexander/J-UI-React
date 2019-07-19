@@ -1,7 +1,7 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 const devMode = process.env.NODE_ENV !== 'production';
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   // mode: "development",
@@ -68,16 +68,20 @@ module.exports = {
       // 使用顺序：一个loader做一件事情，从右往左：sass-loader(将SCSS文件翻译成css)->css-loader将转译后的文件变成对象字符串->STYLE-LOADER这个对象变成<style>标签
       {
         test: /\.(sa|sc|c)ss$/,
-        exclude: /\.module.(s(a|c)ss)$/,
+        exclude: /\.module.(s([ac])ss)$/,
         loader: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader:  'css-loader',
+            options: {
+              // modules: true,
+              // localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              sourceMap: devMode
+            }
+          },
           {
             loader: 'sass-loader',
             options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              camelCase: true,
               sourceMap: devMode
             }
           }

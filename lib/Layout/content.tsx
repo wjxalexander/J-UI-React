@@ -11,7 +11,7 @@ const Content:React.FunctionComponent<layoutContentProps> = (props) => {
 
   return (
     <div className={cls(sc('content'),className)} {...restProps}>
-    content
+      {props.children}
     </div>
   );
 };

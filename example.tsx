@@ -6,30 +6,35 @@ import DialogExample from "./examples/dialog.example";
 import ButtonExample from "./examples/button.example";
 import LayoutExample from "./examples/layout.example";
 import "./example.scss"
+import {Layout, Header, Footer, Content, SideBar} from "./lib/Layout";
+
 
 ReactDOM.render((
   <Router>
-    <header></header>
-    <div>
-      <aside>
-        <h2>entry</h2>
-        <ul>
-          <li><Link to="/icon">Icon</Link></li>
-          <li><Link to="/button">Button</Link></li>
-          <li><Link to="/dialog">Dialog</Link></li>
-          <li><Link to="/button">Button</Link></li>
-          <li><Link to="/layout">Layout</Link></li>
+    <Layout>
+      <Header> J-UI-React</Header>
+      <Layout>
+        <SideBar>
+          <ul>
+            <li><Link to="/icon">Icon</Link></li>
+            <li><Link to="/button">Button</Link></li>
+            <li><Link to="/dialog">Dialog</Link></li>
+            <li><Link to="/button">Button</Link></li>
+            <li><Link to="/layout">Layout</Link></li>
 
 
-        </ul>
-      </aside>
-      <main>
-        <Route path="/icon" component={IconExample}/>
-        <Route path="/dialog" component={DialogExample}/>
-        <Route path="/button" component={ButtonExample}/>
-        <Route path="/layout" component={LayoutExample}/>
+          </ul>
+        </SideBar>
+        <Content>
+          <Route path="/icon" component={IconExample}/>
+          <Route path="/dialog" component={DialogExample}/>
+          <Route path="/button" component={ButtonExample}/>
+          <Route path="/layout" component={LayoutExample}/>
 
-      </main>
-    </div>
+        </Content>
+        <SideBar>ghj</SideBar>
+      </Layout>
+      <Footer>2019</Footer>
+    </Layout>
   </Router>
 ), document.body.querySelector(("#root")));

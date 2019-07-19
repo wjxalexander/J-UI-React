@@ -1,0 +1,22 @@
+@import "../lib/_helper.scss";
+.layoutOne{
+  background: lighten( $button_hover_color, 10%);
+  margin: 5px 0;
+  color: #fff;
+}
+.layoutContent{
+  background: $button_hover_color;
+  margin: 5px 0;
+  color: #fff;
+
+}
+.layoutAside{
+  background: darken( $button_hover_color, 10%);
+  margin: 5px 0;
+  color: #fff;
+}
+.layoutAside + .layoutContent,
+  .layoutContent + .layoutAside,
+.layoutAside + .j-ui-layout{
+  margin-left: 6px;
+}

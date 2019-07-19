@@ -11,7 +11,7 @@ const Header:React.FunctionComponent<layoutHeaderProps> = (props) => {
 
   return (
     <div className={cls(sc('header'),className)} {...restProps}>
-
+      {props.children}
     </div>
   );
 };
