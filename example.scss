@@ -1,21 +1,74 @@
-*{
+$background_color: rgb(250, 249, 248);
+$active_background_color: rgb(243, 242, 241);
+$padding: 1em;
+* {
   font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;}
-*::before{
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;}
-*::after{
+  box-sizing: border-box;
+}
+
+*::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-h1,h2,h3,h4,h5,h6{
+
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+ol, ul {
+  list-style: none;
 
+}
+
+a {
+  text-decoration: none;
+}
+
+.example {
+  &-site-wrapper {
+    padding: 0 32px;
+    min-height: 100vh;
+  }
+;
+
+  &-nav-bar {
+    padding: 52px 32px 0 0;
+    background-color: #fff;
+
+    ul {
+      min-width: 18em;
+      padding: 0;
+
+      li {
+        display: block;
+      }
+
+      a {
+        display: block;
+        color: #000;
+        padding: 8px 8px 8px 40px;
+
+        &.active {
+          background: $active_background_color;
+        }
+
+
+      }
+    }
+  }
+
+  &-content {
+    background-color: $background_color;
+  }
+}

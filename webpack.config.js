@@ -46,12 +46,12 @@ module.exports = {
   },
   plugins: [
     ///...
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    }),
+    // new MiniCssExtractPlugin({
+    //   // Options similar to the same options in webpackOptions.output
+    //   // both options are optional
+    //   filename: devMode ? '[name].css' : '[name].[hash].css',
+    //   chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    // }),
   ],
   module: {
     rules: [
@@ -70,7 +70,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         exclude: /\.module.(s([ac])ss)$/,
         loader: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader:  'css-loader',
             options: {

@@ -12,7 +12,8 @@
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js && codecov"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js && codecov",
+    "doc": "cross-env NODE_ENV=production webpack -p --config webpack.config.example.js"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,8 @@
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
+    "prism-react-renderer": "^0.1.6",
+    "raw-loader": "^3.1.0",
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
