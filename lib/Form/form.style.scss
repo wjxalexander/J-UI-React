@@ -1,0 +1,25 @@
+.j-ui-form{
+   &-row{
+     margin: 1em 0;
+     &:first-child{
+       margin-top: 0;
+     }
+     &:last-child{
+       margin-bottom: 0;
+     }
+   }
+   &-label{
+     height: 1em;
+   }
+  &-td{
+    display: inline-block;
+    min-width:15%;
+    text-align: right;
+  }
+
+  &-td + &-td{
+    padding-left: 16px;
+  }
+
+
+}

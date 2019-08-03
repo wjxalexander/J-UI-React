@@ -46,12 +46,12 @@ module.exports = {
   },
   plugins: [
     ///...
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // both options are optional
-    //   filename: devMode ? '[name].css' : '[name].[hash].css',
-    //   chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    // }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    }),
   ],
   module: {
     rules: [
@@ -66,11 +66,33 @@ module.exports = {
       },
 
       // 使用顺序：一个loader做一件事情，从右往左：sass-loader(将SCSS文件翻译成css)->css-loader将转译后的文件变成对象字符串->STYLE-LOADER这个对象变成<style>标签
+
+      {
+        test:  /\.example.(s([ac])ss)$/,
+        loader: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader:  'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              camelCase: true,
+              sourceMap: devMode
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: devMode
+            }
+          }
+        ]
+      },
       {
         test: /\.(sa|sc|c)ss$/,
-        exclude: /\.module.(s([ac])ss)$/,
+        exclude: /\.example.(s([ac])ss)$/,
         loader: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader:  'css-loader',
             options: {
@@ -87,7 +109,6 @@ module.exports = {
           }
         ]
       },
-
 // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {enforce: "pre", test: /\.js$/, loader: "source-map-loader"}
     ]
