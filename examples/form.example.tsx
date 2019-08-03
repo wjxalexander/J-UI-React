@@ -10,8 +10,8 @@ const FormExample: React.FunctionComponent = () => {
     passWord: ""
   });
   const [fields, setFields] = useState([
-    {name: 'userName', label: "userName", input: {type: 'text'}},
-    {name: 'passWord', label: "passWord", input: {type: 'password'}}
+    {name: 'userName', label: "用户名", input: {type: 'text'}},
+    {name: 'passWord', label: "密码", input: {type: 'password'}}
   ]);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const rules = [

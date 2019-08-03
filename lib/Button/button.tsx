@@ -27,5 +27,7 @@ const Button: React.FunctionComponent<buttonProps> = (props: buttonProps) => {
         <div className={classGenerator(`${buttonType}-secondaryText`)}>{secondaryText}</div> : null}
     </button>)
 };
-
+ Button.defaultProps = {
+   buttonType: 'default'
+ }
 export default Button;
