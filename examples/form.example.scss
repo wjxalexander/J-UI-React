@@ -1,4 +1,9 @@
 .container{
-  width: 60%;
+  width: 80%;
   border: 1px solid red;
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+
 }
