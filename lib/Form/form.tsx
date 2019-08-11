@@ -2,12 +2,11 @@ import * as React from "react";
 import Input from "../Input/input";
 import cls from "classnames";
 import "./form.style.scss"
-import {For} from "@babel/types";
 
 export interface FormValueProps {
   [key: string]: any
 }
-
+// form properties
 interface FormProps {
   value: FormValueProps;
   fields: Array<{ name: string, label: string, input: { type: string } }>;
@@ -16,7 +15,8 @@ interface FormProps {
   onChange: (value: FormValueProps) => void;
   errors?: { [key: string]: Array<string> };
   className?: string;
-  errorsDisplayMode?: 'first' | 'all'
+  errorsDisplayMode?: 'first' | 'all';
+  errorTranslation?:(key:string | number)=>string
 }
 
 export const customError = (customValidator: any) => {
@@ -33,6 +33,16 @@ const Form: React.FunctionComponent<FormProps> = (props: FormProps) => {
     ;
     props.onChange(newFormValue)
   };
+  const defaultError=(message:string):string=>{
+    const map:any = {
+      required:"required",
+      minLength:"less than minLength",
+      maxLength:"longer than maxLength",
+      pattern: "wrong pattern"
+    };
+    return props.errorTranslation&&props.errorTranslation(message) || map[message]|| "未知错误"
+  }
+
   const {className} = props;
   return (
     <form onSubmit={onSubmit} className={"j-ui-form"}>
@@ -56,7 +66,7 @@ const Form: React.FunctionComponent<FormProps> = (props: FormProps) => {
               <td
                 className="j-ui-form-td-errors">
                 {props.errors && props.errors[item.name] &&
-                (props.errorsDisplayMode === "first" ? props.errors[item.name][0] : props.errors[item.name].join(","))}&nbsp;</td>
+                (props.errorsDisplayMode === "first" ? defaultError!( props.errors[item.name][0]) : props.errors[item.name].map(ele=>defaultError!(ele)).join(","))}&nbsp;</td>
             </tr>
           </React.Fragment>
         ))}
@@ -72,6 +82,7 @@ const Form: React.FunctionComponent<FormProps> = (props: FormProps) => {
   )
 };
 Form.defaultProps = {
-  errorsDisplayMode: 'first'
+  errorsDisplayMode: 'first',
+
 };
 export default Form

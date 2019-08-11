@@ -1,17 +1,19 @@
 import Form, {FormValueProps} from "../lib/Form/form"
 import * as React from "react";
-import {useState, Fragment, useEffect} from "react";
+import {useState, useEffect} from "react";
 import Button from "../lib/Button/button"
 import validator, {noError} from "../lib/Form/validator";
 import style from "./form.example.scss"
 
-const usernames = ['alex', 'wang', 'li', 'liu'];
+const userNames = ['alex', 'wang', 'li', 'liu'];
 const checkUserName = (username: string, success: () => void, fail: () => void) => {
+  console.log(userNames.includes(username))
+
   setTimeout(() => {
-    if (usernames.includes(username)) {
-      success()
-    } else {
+    if (userNames.includes(username)) {
       fail()
+    } else {
+      success()
     }
   }, 3000)
 };
@@ -30,12 +32,11 @@ const FormExample: React.FunctionComponent = () => {
       {
         key: "userName", validator: {
           name: 'unique',
+          errorMessage: "用户名已经存在",
           validate(userName: string) {
-            console.log("dioauomg")
             return new Promise<void>((resolve, reject) => {
               checkUserName(userName,resolve,reject)
             })
-
           }
         }
       },
@@ -46,24 +47,27 @@ const FormExample: React.FunctionComponent = () => {
 
     ];
     const errors = validator(formData, rules,(errors:any)=>{
-      console.log(errors);
       if (noError(errors)) {
         console.log('success')
       }
       setErrors((errors))
     });
-    // console.log(errors,"erros")
-
+    console.log(errors,"erros")
   };
   const [errors, setErrors] = useState({});
   useEffect(() => {
     console.log(setFields, setFormData)
   });
-  // const onInputChange = (e:React.ChangeEvent<HTMLInputElement>)=>setFormData(e.target.value)
-
+const errorTranslation=(message:string)=>{
+  const map:any = {
+    unique:"用户名已存在"
+  };
+  return map[message]
+}
   return (
     <div className={style.container}>
       <Form value={formData} fields={fields} errors={errors}
+            errorTranslation={errorTranslation}
             buttons={<div className={style.buttons}><Button buttonType='default' type='submit' title={"Submit"}/><Button
               buttonType='custom' type='submit' title={"Cancel"}/></div>}
             onSubmit={onSubmit}
