@@ -4,7 +4,18 @@
     width: 100%;
     border-collapse: collapse;
   }
+   tr{
+     position: relative;
 
+   }
+  &-label{
+    white-space:nowrap;
+  }
+  &-remark{
+    color: $error-color;
+    display: inline-block;
+    margin-right: 3px;
+  }
   &-row {
     &:first-child {
       margin-top: 0;
@@ -26,8 +37,30 @@
     text-align: right;
 
     &-errors {
-      padding: 4px 16px;
+      padding: 4px 0 4px 16px;
       color: $error-color;
+      position: relative;
+      //line-height: 1.5;
+      font-size: 12px;
+      &-content{
+        /* This timing applies on the way OUT */
+        transition-timing-function: ease-in;
+        /* Quick on the way out */
+        transition: 0.2s;
+        /* Hide thing by pushing it outside by default */
+        transform: translateY(130%);
+        &-show{
+            /* This timing applies on the way IN */
+            transition-timing-function: ease-out;
+            /* A litttttle slower on the way in */
+            transition: 0.25s;
+            /* Move into place */
+            transform: translateY(0);
+
+        }
+    }
+
+
   }
   }
   .error-input{
