@@ -39,7 +39,7 @@ module.exports = {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: [".ts", ".tsx", ".js", ".json", ".jsx"],
     alias: {
-      "@": path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, 'lib'),
       "SvgRepo": path.resolve(__dirname, 'IconRepository')
     }
 
@@ -68,7 +68,7 @@ module.exports = {
       // 使用顺序：一个loader做一件事情，从右往左：sass-loader(将SCSS文件翻译成css)->css-loader将转译后的文件变成对象字符串->STYLE-LOADER这个对象变成<style>标签
 
       {
-        test:  /\.example.(s([ac])ss)$/,
+        test:  /\.(example|demo).(s([ac])ss)$/,
         loader: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {

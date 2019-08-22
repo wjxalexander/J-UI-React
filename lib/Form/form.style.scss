@@ -48,6 +48,8 @@
         /* Quick on the way out */
         transition: 0.2s;
         /* Hide thing by pushing it outside by default */
+        margin-left: 16px;
+        color: $error-color;
         transform: translateY(130%);
         &-show{
             /* This timing applies on the way IN */

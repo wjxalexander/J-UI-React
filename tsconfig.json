@@ -6,7 +6,9 @@
       "paths": {
         "utils/*": ["include/utils/*"],
         "stylesheets": ["stylesheets/"],
-        "examples": ["examples/"]
+        "examples": ["examples/"],
+        "@/*": ["./lib/*"]  //支持WEBPACK ALIAS
+
       },
       "rootDirs": ["include"],
       "outDir": "dist",

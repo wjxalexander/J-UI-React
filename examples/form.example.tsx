@@ -1,6 +1,7 @@
 import Form, {FormValueProps} from "../lib/Form/form"
+ import {useState} from "react";
 import * as React from "react";
-import {useState} from "react";
+
 import Button from "../lib/Button/button"
 import validator, {noError} from "../lib/Form/validator";
 import style from "./form.example.scss"
@@ -63,10 +64,10 @@ const FormExample: React.FunctionComponent = () => {
     const map: any = {
       unique: "username has been registered",
       pattern: "wrong Pattern",
-      required: "Please fill this area!",
+      userNameRequired: "Please fill the username!",
       minlength: "less than 8 chars",
       maxlength: "more than 16 chars",
-
+      passwordRequired: "please input the pass word"
     };
     return map[message]
   }

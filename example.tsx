@@ -6,8 +6,10 @@ import ButtonExample from "./examples/button.example";
 import LayoutExample from "./examples/layout.example";
 import "./example.scss"
 import {Layout, Header, Footer, Content, SideBar} from "./lib/Layout";
-import IconDemo from "./examples/demos/icon.demo";
+import IconDemo from "./examples/demos/icondemo/icon.demo";
 import FormExample from "./examples/form.example";
+import CardExample from "./examples/card.example";
+import InputExample from "./examples/input.example";
 
 ReactDOM.render((
   <Router>
@@ -21,6 +23,8 @@ ReactDOM.render((
             <li><NavLink to="/dialog">Dialog</NavLink></li>
             <li><NavLink to="/layout">Layout</NavLink></li>
             <li><NavLink to="/form">Form</NavLink></li>
+            <li><NavLink to="/card">Card</NavLink></li>
+            <li><NavLink to="/input">Input</NavLink></li>
 
           </ul>
         </SideBar>
@@ -30,6 +34,9 @@ ReactDOM.render((
           <Route path="/button" component={ButtonExample}/>
           <Route path="/layout" component={LayoutExample}/>
           <Route path="/form" component={FormExample}/>
+          <Route path="/card" component={CardExample}/>
+          <Route path="/input" component={InputExample}/>
+
 
         </Content>
         <SideBar>ghj</SideBar>

@@ -1,0 +1,23 @@
+.j-ui-card-container{
+  background: #fff;
+  padding: 28px;
+  margin-bottom: 28px;
+  border-radius: 2px;
+  background-clip: padding-box;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108);
+  animation: fade-in .8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  transform: translateY(1.2em);
+ >h2{
+   margin-bottom: 20px;
+   color: #323130;
+   font-weight: 600;
+   line-height: 1;
+   margin-top: 0;
+ }
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

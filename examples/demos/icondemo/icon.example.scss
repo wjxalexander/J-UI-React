@@ -1,0 +1,91 @@
+@import "../_help.scss";
+
+.container {
+  > header {
+    @include headerStyle();
+
+    > h1 {
+      @include titleStyle()
+    }
+  }
+
+  .card {
+
+  }
+
+  p {
+    @include paragraphStyle();
+
+    &:not(:last-child) {
+      margin-bottom: 1.2em
+    }
+  }
+
+  .bestPractice {
+    @include bestPracticeStyle();
+
+    > div {
+      width: 50%;
+
+      &:nth-of-type(2) {
+        margin-left: 30px;
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+
+      > p {
+        max-width: 90%;
+      }
+    }
+
+    ul {
+      margin-top: 20px;
+    }
+
+    .icon {
+      display: inline-block;
+      margin: 1px 10px;
+      width: 20px;
+      height: 25px;
+      line-height: 1.5;
+      font-size: 1em;
+    }
+  }
+
+  .right {
+    .icon {
+      color: $correct-color;
+    }
+  }
+
+  .wrong {
+    .icon {
+      color: $wrong-color;
+    }
+  }
+  .iconDemo {
+    display: block;
+    padding: 30px 30px;
+  }
+ .demoHide{
+   display: none;
+ }
+  .title{
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  >div{
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    &:hover{
+      background: rgb(243, 242, 241);
+    }
+  }
+}
+
+}
