@@ -11,7 +11,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
+    "test": "cross-env NODE_ENV=test jest --watchAll --config=jest.config.js --runInBand",
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js && codecov",
     "doc": "cross-env NODE_ENV=production webpack -p --config webpack.config.example.js"
   },
@@ -44,6 +44,7 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
     "jest-css-modules": "^2.1.0",
+    "jest-enzyme": "^7.1.0",
     "jest-junit": "^6.4.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",

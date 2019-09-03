@@ -62,7 +62,7 @@ const FormExample: React.FunctionComponent = () => {
   // });
   const errorTranslation = (message: string) => {
     const map: any = {
-      unique: "username has been registered",
+      // userNameRequired: "username has been registered",
       pattern: "wrong Pattern",
       userNameRequired: "Please fill the username!",
       minlength: "less than 8 chars",

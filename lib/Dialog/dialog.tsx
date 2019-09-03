@@ -2,9 +2,10 @@ import React, {Fragment, ReactElement, ReactNode} from "react"
 import "./dialog.style.scss"
 import {Icon, Button} from "../index";
 import {rootClass} from "../utils/classFactory";
+import cls from "classnames"
 import ReactDOM from "react-dom";
 
-interface dialogProps {
+interface dialogProps{
   visible: boolean;
   children?: React.ReactNode
   buttons?: Array<ReactElement>;
@@ -13,6 +14,7 @@ interface dialogProps {
   showCloseButton?: boolean;
   noButton?: boolean;
   title?: React.ReactNode;
+  className?:string
 }
 
 // button Generation
@@ -37,7 +39,7 @@ const Dialog: React.FunctionComponent<dialogProps> = (props: dialogProps) => {
   const portalContent = (props.visible ?
     <Fragment>
       <div className={classGenerator("mask")} onClick={MaskDismiss}/>
-      <div className={classGenerator("container")}>
+      <div className={cls(classGenerator("container"),props.className)}>
         {props.showCloseButton ? (<Icon iconName={'Cancel'} USEMsFabricIcon
                                         className={classGenerator("close")}
                                         onClick={onDismiss}/>) : null}
