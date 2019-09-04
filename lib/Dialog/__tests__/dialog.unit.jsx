@@ -34,13 +34,20 @@ describe('Dialog', () => {
     expect(fn).toBeCalled();
     expect(visible).toBe(false);
   });
+  it('no X no mask dismiss correctly', () => {
+    let visible = true;
+    const fn = jest.fn(()=>visible=!visible);
+    const wrapper = shallow(<Dialog maskClosable={false} showCloseButton={false} className="Dialog-test" onDismiss={fn} visible={visible} /> );
+    expect(wrapper.find('.j-ui-dialog-close')).not.toExist();
+    wrapper.find('.j-ui-dialog-mask').simulate('click');
+    expect(fn).not.toBeCalled();
+    expect(visible).toBe(false);
+  });
   it('default button correctly', () => {
     let visible = true;
     const fn = jest.fn(()=>visible=!visible);
     const wrapper = mount(<Dialog className="Dialog-test" onDismiss={fn} visible={visible} /> );
     const buttons = wrapper.find(Button);
-    console.log(buttons.debug());
-    console.log(wrapper.debug())
     expect(buttons.length).toBe(2);
     wrapper.find('Button[title="Cancel"]').simulate('click');
     expect(fn).toBeCalled();

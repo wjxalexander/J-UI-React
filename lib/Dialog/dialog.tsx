@@ -5,16 +5,17 @@ import {rootClass} from "../utils/classFactory";
 import cls from "classnames"
 import ReactDOM from "react-dom";
 
-interface dialogProps{
+interface dialogProps {
   visible: boolean;
   children?: React.ReactNode
   buttons?: Array<ReactElement>;
   onDismiss: React.MouseEventHandler<HTMLOrSVGElement | React.ReactNode>;
+  onOk?: React.MouseEventHandler<HTMLOrSVGElement | React.ReactNode>;
   maskClosable?: boolean;
   showCloseButton?: boolean;
   noButton?: boolean;
   title?: React.ReactNode;
-  className?:string
+  className?: string
 }
 
 // button Generation
@@ -32,6 +33,9 @@ const Dialog: React.FunctionComponent<dialogProps> = (props: dialogProps) => {
   const onDismiss: React.MouseEventHandler<HTMLOrSVGElement> = (event: React.MouseEvent<HTMLOrSVGElement>) => {
     props.onDismiss(event)
   };
+  const onOk: React.MouseEventHandler<HTMLOrSVGElement> = (event: React.MouseEvent<HTMLOrSVGElement>) => {
+    props.onOk && props.onOk(event)
+  };
   const MaskDismiss: React.MouseEventHandler<HTMLOrSVGElement> = (event: React.MouseEvent<HTMLOrSVGElement>) => {
     if (!props.maskClosable) return;
     props.onDismiss(event)
@@ -39,7 +43,7 @@ const Dialog: React.FunctionComponent<dialogProps> = (props: dialogProps) => {
   const portalContent = (props.visible ?
     <Fragment>
       <div className={classGenerator("mask")} onClick={MaskDismiss}/>
-      <div className={cls(classGenerator("container"),props.className)}>
+      <div className={cls(classGenerator("container"), props.className)}>
         {props.showCloseButton ? (<Icon iconName={'Cancel'} USEMsFabricIcon
                                         className={classGenerator("close")}
                                         onClick={onDismiss}/>) : null}
@@ -48,7 +52,7 @@ const Dialog: React.FunctionComponent<dialogProps> = (props: dialogProps) => {
         <footer className={classGenerator("footer")}>
           {props.buttons && props.buttons.length > 0 ? (buttons(props.buttons)) :
             props.noButton ? null : (<Fragment>
-              <span><Button buttonType="default" title="Save"/></span>
+              <span><Button buttonType="default" title="Save" onClick={onOk}/></span>
               <span><Button buttonType="custom" title="Cancel" onClick={onDismiss}/></span>
             </Fragment>)}
         </footer>
