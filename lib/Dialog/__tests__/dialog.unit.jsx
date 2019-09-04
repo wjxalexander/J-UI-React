@@ -41,7 +41,6 @@ describe('Dialog', () => {
     expect(wrapper.find('.j-ui-dialog-close')).not.toExist();
     wrapper.find('.j-ui-dialog-mask').simulate('click');
     expect(fn).not.toBeCalled();
-    expect(visible).toBe(false);
   });
   it('default button correctly', () => {
     let visible = true;
