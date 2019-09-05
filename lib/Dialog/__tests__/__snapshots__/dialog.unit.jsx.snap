@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Dialog buttons renders correctly 1`] = `
+<React.Fragment>
+  <span>
+    <Button
+      buttonType="default"
+      title="保存"
+    />
+  </span>
+  <span>
+    <Button
+      buttonType="custom"
+      onClick={[MockFunction]}
+      title="取消"
+    />
+  </span>
+</React.Fragment>
+`;
+
 exports[`Dialog renders correctly 1`] = `
 <div
   className="j-ui-dialog-container Dialog-test"
@@ -17,7 +35,11 @@ exports[`Dialog renders correctly 1`] = `
   </header>
   <main
     className="j-ui-dialog-content"
-  />
+  >
+    <div>
+      123
+    </div>
+  </main>
   <footer
     className="j-ui-dialog-footer"
   >

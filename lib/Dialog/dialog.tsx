@@ -19,7 +19,7 @@ interface dialogProps {
 }
 
 // button Generation
-const buttons = (buttonArray: Array<ReactElement>): ReactElement => {
+export const buttonsGenerate = (buttonArray: Array<ReactElement>): ReactElement => {
   return (
     <Fragment>
       {buttonArray.map((item, index) => (<span key={`${index}-${Math.random()}`}>{item}</span>))}
@@ -50,7 +50,7 @@ const Dialog: React.FunctionComponent<dialogProps> = (props: dialogProps) => {
         <header className={classGenerator("header")}>{props.title || "提示"}</header>
         <main className={classGenerator("content")}>{props.children}</main>
         <footer className={classGenerator("footer")}>
-          {props.buttons && props.buttons.length > 0 ? (buttons(props.buttons)) :
+          {props.buttons && props.buttons.length > 0 ? (buttonsGenerate(props.buttons)) :
             props.noButton ? null : (<Fragment>
               <span><Button buttonType="default" title="Save" onClick={onOk}/></span>
               <span><Button buttonType="custom" title="Cancel" onClick={onDismiss}/></span>
