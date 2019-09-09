@@ -1,5 +1,5 @@
 import React from 'react';
-import Dialog,{buttonsGenerate} from '../dialog';
+import Dialog,{buttonsGenerate, alert, modal} from '../dialog';
 import Enzyme, {mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {Icon, Button} from "../../index"
@@ -42,15 +42,16 @@ describe('Dialog', () => {
     const buttonMock = buttonsGenerate([<Button buttonType="default" title="保存"/>,
       <Button onClick={fn} buttonType="custom" title="取消"/>])
     expect(buttonMock).toMatchSnapshot()
-    console.log(wrapper.debug())
     expect(wrapper.prop('buttons')).toBeTruthy();
     expect(wrapper.prop('buttons').length).toBe(2);
-
-    //
-    // const defaultButton = wrapper.find(Button);
-    // expect(defaultButton.at(0).prop('title')).toBe('Save');
-    // expect(defaultButton.at(1).prop('title')).toBe('Cancel');
   });
+  it('no buttons',()=>{
+    let visible = true;
+    const fn = jest.fn(() => visible = !visible);
+    const wrapper = mount(<Dialog className="Dialog-test" onDismiss={fn} visible={visible} noButton={true}/>);
+    expect(wrapper.prop('noButton')).toBe(true);
+    expect(wrapper.find(Button)).not.toExist()
+  })
   it('mask dismiss correctly', () => {
       let visible = true;
       const fn = jest.fn(() => visible = !visible);

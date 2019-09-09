@@ -63,13 +63,15 @@ const Dialog: React.FunctionComponent<dialogProps> = (props: dialogProps) => {
     ReactDOM.createPortal(portalContent, document.body)
   )
 };
+
 Dialog.defaultProps = {
   maskClosable: true,
   showCloseButton: true,
   noButton: false
 };
+
 const alert = (content: React.ReactNode) => {
-  const button = [<Button buttonType="default" title="确定" onClick={() => onClose()}/>];
+  const button = [<Button buttonType="default" title="Confirm" onClick={() => onClose()}/>];
   const onClose = modal(content, false, button)
 };
 const confirm = (content: React.ReactNode, confirm?: () => void, cancel?: () => void) => {
@@ -92,6 +94,8 @@ const confirm = (content: React.ReactNode, confirm?: () => void, cancel?: () => 
 
 
 const modal = (content: ReactNode, noButton?: boolean, buttons?: Array<ReactElement>,) => {
+  const div = document.createElement("div");
+  div.className = "j-ui-dialog-model";
   const disMiss = () => {
     ReactDOM.render(React.cloneElement(component, {visible: false}), div);
     ReactDOM.unmountComponentAtNode(div);
@@ -102,7 +106,7 @@ const modal = (content: ReactNode, noButton?: boolean, buttons?: Array<ReactElem
                             visible={true}
                             noButton={noButton}
                             buttons={buttons}>{content}</Dialog>;
-  const div = document.createElement("div");
+
   document.body.append(div);
   ReactDOM.render(component, div);
   return disMiss;
