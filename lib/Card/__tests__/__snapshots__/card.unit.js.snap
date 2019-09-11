@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card card snapshot 1`] = `
+<div
+  className="j-ui-card-container"
+>
+  <h2>
+    test
+  </h2>
+  <div>
+    test
+  </div>
+</div>
+`;
