@@ -33,8 +33,7 @@ describe('alert', () => {
     expect(dialog.length).toBe(1);
     expect(button[0].getAttribute('title')).toBe("Confirm");//w
     expect(errorSpy).not.toHaveBeenCalled();
-
-  })
+  });
   it('confirm render correct1', () => {
     // first Modal
     const onCancel = jest.fn();
