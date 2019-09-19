@@ -65,4 +65,4 @@ describe("render input Proper",()=>{
     component.find('input').simulate('change', event);
     expect(onSearchMock).toHaveBeenCalledTimes(1);
   });
-})
+});
