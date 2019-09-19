@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "docs": "cross-env NODE_ENV=production webpack -p --config webpack.config.docs.js",
     "test": "cross-env NODE_ENV=test jest --watchAll --config=jest.config.js --runInBand --no-cache",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml --config=jest.config.ci.js&& codecov",
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest -w 1 --no-cache --config=jest.config.ci.js && codecov",
     "doc": "cross-env NODE_ENV=production webpack -p --config webpack.config.example.js"
   },
   "repository": {
