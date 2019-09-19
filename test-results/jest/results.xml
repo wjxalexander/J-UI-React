@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="35" failures="0" time="6.027">
-  <testsuite name="Dialog" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:20" time="2.728" tests="7">
-    <testcase classname="Dialog renders correctly" name="Dialog renders correctly" time="0.036">
+<testsuites name="jest tests" tests="35" failures="0" time="4.482">
+  <testsuite name="Dialog" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:01" time="1.773" tests="7">
+    <testcase classname="Dialog renders correctly" name="Dialog renders correctly" time="0.04">
     </testcase>
-    <testcase classname="Dialog buttons renders correctly" name="Dialog buttons renders correctly" time="0.03">
+    <testcase classname="Dialog buttons renders correctly" name="Dialog buttons renders correctly" time="0.026">
     </testcase>
     <testcase classname="Dialog no buttons" name="Dialog no buttons" time="0.009">
     </testcase>
@@ -13,17 +13,17 @@
     </testcase>
     <testcase classname="Dialog no X no mask dismiss correctly" name="Dialog no X no mask dismiss correctly" time="0.004">
     </testcase>
-    <testcase classname="Dialog default button correctly" name="Dialog default button correctly" time="0.017">
+    <testcase classname="Dialog default button correctly" name="Dialog default button correctly" time="0.011">
     </testcase>
   </testsuite>
-  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:23" time="0.24" tests="9">
-    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.009">
+  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:02" time="0.233" tests="9">
+    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.008">
     </testcase>
-    <testcase classname="icon test is a HTML" name="icon test is a HTML" time="0">
+    <testcase classname="icon test is a HTML" name="icon test is a HTML" time="0.002">
     </testcase>
-    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.011">
+    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.012">
     </testcase>
-    <testcase classname="icon test onClick fabric" name="icon test onClick fabric" time="0.003">
+    <testcase classname="icon test onClick fabric" name="icon test onClick fabric" time="0.002">
     </testcase>
     <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.002">
     </testcase>
@@ -31,15 +31,15 @@
     </testcase>
     <testcase classname="icon test onTouchCancel svg" name="icon test onTouchCancel svg" time="0.002">
     </testcase>
-    <testcase classname="icon test outside svg" name="icon test outside svg" time="0.007">
+    <testcase classname="icon test outside svg" name="icon test outside svg" time="0.008">
     </testcase>
     <testcase classname="icon test outside svg onTouchCancel" name="icon test outside svg onTouchCancel" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="render input Proper" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:23" time="0.334" tests="7">
+  <testsuite name="render input Proper" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:03" time="0.341" tests="7">
     <testcase classname="render input Proper mount correct" name="render input Proper mount correct" time="0.013">
     </testcase>
-    <testcase classname="render input Proper focus() and onFocus" name="render input Proper focus() and onFocus" time="0.004">
+    <testcase classname="render input Proper focus() and onFocus" name="render input Proper focus() and onFocus" time="0.005">
     </testcase>
     <testcase classname="render input Proper blur() and onBlur" name="render input Proper blur() and onBlur" time="0.003">
     </testcase>
@@ -52,37 +52,37 @@
     <testcase classname="render input Proper should call onChange prop with input value" name="render input Proper should call onChange prop with input value" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="alert" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:23" time="0.212" tests="3">
-    <testcase classname="alert alert render correct" name="alert alert render correct" time="0.008">
+  <testsuite name="alert" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:03" time="0.237" tests="3">
+    <testcase classname="alert alert render correct" name="alert alert render correct" time="0.015">
     </testcase>
-    <testcase classname="alert confirm render correct1" name="alert confirm render correct1" time="0.015">
+    <testcase classname="alert confirm render correct1" name="alert confirm render correct1" time="0.016">
     </testcase>
     <testcase classname="alert confirm render correct1" name="alert confirm render correct1" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:24" time="0.163" tests="6">
-    <testcase classname="Button renders correctly" name="Button renders correctly" time="0.002">
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:03" time="0.175" tests="6">
+    <testcase classname="Button renders correctly" name="Button renders correctly" time="0.003">
     </testcase>
     <testcase classname="Button renders correctly withIcon" name="Button renders correctly withIcon" time="0.001">
     </testcase>
     <testcase classname="Button renders correctly withoutTitle" name="Button renders correctly withoutTitle" time="0.001">
     </testcase>
-    <testcase classname="Button renders correctly with secondaryTitle" name="Button renders correctly with secondaryTitle" time="0.001">
+    <testcase classname="Button renders correctly with secondaryTitle" name="Button renders correctly with secondaryTitle" time="0">
     </testcase>
-    <testcase classname="Button onClick Button" name="Button onClick Button" time="0.01">
+    <testcase classname="Button onClick Button" name="Button onClick Button" time="0.011">
     </testcase>
-    <testcase classname="Button onClick Button disabled" name="Button onClick Button disabled" time="0.004">
+    <testcase classname="Button onClick Button disabled" name="Button onClick Button disabled" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:24" time="0.14" tests="1">
+  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:03" time="0.133" tests="1">
     <testcase classname="button test is a div" name="button test is a div" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="card" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:24" time="0.141" tests="1">
+  <testsuite name="card" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:04" time="0.146" tests="1">
     <testcase classname="card card snapshot" name="card card snapshot" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:04:24" time="0.1" tests="1">
+  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-09-19T15:46:04" time="0.108" tests="1">
     <testcase classname="hello sum" name="hello sum" time="0.002">
     </testcase>
   </testsuite>
