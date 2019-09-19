@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="17" failures="0" time="4.859">
-  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:16" time="1.869" tests="1">
-    <testcase classname="button test is a div" name="button test is a div" time="0.017">
+<testsuites name="jest tests" tests="28" failures="0" time="6.001">
+  <testsuite name="Dialog" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:51" time="2.625" tests="7">
+    <testcase classname="Dialog renders correctly" name="Dialog renders correctly" time="0.036">
+    </testcase>
+    <testcase classname="Dialog buttons renders correctly" name="Dialog buttons renders correctly" time="0.027">
+    </testcase>
+    <testcase classname="Dialog no buttons" name="Dialog no buttons" time="0.014">
+    </testcase>
+    <testcase classname="Dialog mask dismiss correctly" name="Dialog mask dismiss correctly" time="0.002">
+    </testcase>
+    <testcase classname="Dialog X dismiss correctly" name="Dialog X dismiss correctly" time="0.004">
+    </testcase>
+    <testcase classname="Dialog no X no mask dismiss correctly" name="Dialog no X no mask dismiss correctly" time="0.003">
+    </testcase>
+    <testcase classname="Dialog default button correctly" name="Dialog default button correctly" time="0.014">
     </testcase>
   </testsuite>
-  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:18" time="0.406" tests="1">
-    <testcase classname="hello sum" name="hello sum" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:16" time="2.545" tests="9">
-    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.015">
+  <testsuite name="icon test" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:54" time="0.25" tests="9">
+    <testcase classname="icon test is a svg" name="icon test is a svg" time="0.007">
     </testcase>
     <testcase classname="icon test is a HTML" name="icon test is a HTML" time="0.001">
     </testcase>
-    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.043">
+    <testcase classname="icon test onClick svg" name="icon test onClick svg" time="0.011">
     </testcase>
-    <testcase classname="icon test onClick fabric" name="icon test onClick fabric" time="0.003">
+    <testcase classname="icon test onClick fabric" name="icon test onClick fabric" time="0.002">
     </testcase>
     <testcase classname="icon test onMouseLeave svg" name="icon test onMouseLeave svg" time="0.002">
     </testcase>
@@ -23,23 +31,43 @@
     </testcase>
     <testcase classname="icon test onTouchCancel svg" name="icon test onTouchCancel svg" time="0.002">
     </testcase>
-    <testcase classname="icon test outside svg" name="icon test outside svg" time="0.009">
+    <testcase classname="icon test outside svg" name="icon test outside svg" time="0.007">
     </testcase>
     <testcase classname="icon test outside svg onTouchCancel" name="icon test outside svg onTouchCancel" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2019-06-30T04:28:16" time="2.623" tests="6">
-    <testcase classname="Button renders correctly" name="Button renders correctly" time="0.014">
+  <testsuite name="alert" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:54" time="0.176" tests="3">
+    <testcase classname="alert alert render correct" name="alert alert render correct" time="0.007">
+    </testcase>
+    <testcase classname="alert confirm render correct1" name="alert confirm render correct1" time="0.019">
+    </testcase>
+    <testcase classname="alert confirm render correct1" name="alert confirm render correct1" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:54" time="0.168" tests="6">
+    <testcase classname="Button renders correctly" name="Button renders correctly" time="0.003">
     </testcase>
     <testcase classname="Button renders correctly withIcon" name="Button renders correctly withIcon" time="0.001">
     </testcase>
     <testcase classname="Button renders correctly withoutTitle" name="Button renders correctly withoutTitle" time="0.001">
     </testcase>
-    <testcase classname="Button renders correctly with secondaryTitle" name="Button renders correctly with secondaryTitle" time="0.001">
+    <testcase classname="Button renders correctly with secondaryTitle" name="Button renders correctly with secondaryTitle" time="0">
     </testcase>
-    <testcase classname="Button onClick Button" name="Button onClick Button" time="0.034">
+    <testcase classname="Button onClick Button" name="Button onClick Button" time="0.011">
     </testcase>
     <testcase classname="Button onClick Button disabled" name="Button onClick Button disabled" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="button test" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:55" time="0.193" tests="1">
+    <testcase classname="button test is a div" name="button test is a div" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="card" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:55" time="0.159" tests="1">
+    <testcase classname="card card snapshot" name="card card snapshot" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="hello" errors="0" failures="0" skipped="0" timestamp="2019-09-19T14:34:55" time="0.111" tests="1">
+    <testcase classname="hello sum" name="hello sum" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>

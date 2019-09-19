@@ -29,7 +29,7 @@ describe("render input Proper",()=>{
     const handleFocus = jest.fn();
     const wrapper = mount(<Input onFocus={handleFocus}/>, {attachTo: container});
     expect(wrapper.prop('onFocus')).toBeTruthy();
-    console.log(wrapper.debug());
+    // console.log(wrapper.debug());
     wrapper.find('input').simulate('focus');
     expect(handleFocus).toHaveBeenCalled();
   });
