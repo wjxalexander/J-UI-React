@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render input Proper mount correct 1`] = `
+<Input>
+  <span
+    className="J-UI-input-wrapper"
+  >
+    <input
+      className="J-UI-input"
+      onChange={[Function]}
+      value=""
+    />
+  </span>
+</Input>
+`;
+
+exports[`render input Proper should support maxLength 1`] = `
+<Input
+  maxLength={3}
+>
+  <span
+    className="J-UI-input-wrapper"
+  >
+    <input
+      className="J-UI-input"
+      maxLength={3}
+      onChange={[Function]}
+      value=""
+    />
+  </span>
+</Input>
+`;

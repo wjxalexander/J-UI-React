@@ -1,12 +1,14 @@
 import React, {useRef, useState} from 'react';
 import cls from "classnames";
 import "./input.scss"
+import Icon, {IconProps} from "../Icon/icon";
 
 interface InputProps extends React.AllHTMLAttributes<HTMLInputElement> {
   className?: string;
   mask?: maskProps;
   componentRef?: React.RefObject<HTMLInputElement>;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, newValue?: string) => void;
+  iconProps?:IconProps
 }
 
 interface maskProps {
@@ -20,7 +22,7 @@ function setSelectionRange(input: HTMLInputElement, selectionStart: number, sele
 
 
 const Input: React.FunctionComponent<InputProps> = (props: InputProps) => {
-  const {className, mask, componentRef, onChange, ...restProps} = props;
+  const {className, mask, componentRef, onChange,iconProps, ...restProps} = props;
   const textInput = useRef<HTMLInputElement>(null);
   const value = props.value || "";
   const [inputVal, setInputVal] = useState(value);
@@ -75,8 +77,13 @@ const Input: React.FunctionComponent<InputProps> = (props: InputProps) => {
         });
     }
   };
-  return <input ref={textInput} value={inputVal} onChange={_onChange}
-                className={cls(className, 'j-ui-input')}{...restProps} />
+  return (
+    <span className="J-UI-input-wrapper">
+      <input ref={textInput} value={inputVal} onChange={_onChange}
+                className={cls(className, 'J-UI-input')}{...restProps} />
+      {iconProps && iconProps.iconName&&<Icon {...iconProps} />}
+    </span>)
+
 };
 
 Input.defaultProps = {};

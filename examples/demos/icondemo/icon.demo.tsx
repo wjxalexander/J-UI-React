@@ -69,12 +69,49 @@ const IconDemo: React.FunctionComponent = (props) => {
             </Demo>
           </div>
         </Card>
-        <Card title="Implementation">
-          <div>
+        <Card title="Implementation" className={style.implementation}>
             <h3>IconProps interface</h3>
             <p>{`Extends React.SVGAttributes<HTMLOrSVGElement>, React.HTMLAttributes<HTMLOrSVGElement>`}</p>
+            <table>
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Default value</th>
+                <th>Description</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>iconName</td>
+                <td>string</td>
+                <td>Yes</td>
+                <td> </td>
+                <td>The name of the icon to use from the icon font.</td>
+              </tr>
+              <tr>
+                <td>className</td>
+                <td>string</td>
+                <td>No</td>
+                <td> </td>
+                <td>Modify the icon style with css </td>
+              </tr>
+              <tr>
+                <td>USEMsFabricIcon</td>
+                <td>boolean</td>
+                <td>No</td>
+                <td> false </td>
+                <td>You can use the Fabric-UI Icons. To find more Icons and details, check: <a href="https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-react">Microsoft fabric icons</a> </td>
+              </tr>
+              </tbody>
+            </table>
+          <div>
+            <h3>About Custom Icon</h3>
+            <p>You use the createFromIconFont function to use your own icons deployed at iconfont.cn in a convenient way. See the example above</p>
           </div>
         </Card>
+
       </main>
     </div>
 

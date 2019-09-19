@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render input Proper mount correct 1`] = `
+<Input>
+  <span
+    className="J-UI-input-wrapper"
+  >
+    <input
+      className="J-UI-input"
+      onChange={[Function]}
+      value=""
+    />
+  </span>
+</Input>
+`;

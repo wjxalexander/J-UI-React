@@ -49,7 +49,7 @@ describe('alert', () => {
     const onCancel = jest.fn();
     const onOk = jest.fn();
     confirm(<div>test</div>, onOk, onCancel)
-    console.log($$('.j-ui-button-default-wrapper'))
+    // console.log($$('.j-ui-button-default-wrapper'))
     $$('.j-ui-button-default-wrapper')[1].click();
     expect(onCancel.mock.calls.length).toBe(1);
     expect(onOk.mock.calls.length).toBe(0);

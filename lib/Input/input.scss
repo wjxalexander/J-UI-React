@@ -1,6 +1,9 @@
 @import "../_helper";
 
-.j-ui-input {
+.J-UI-input-wrapper{
+
+ position: relative;
+.J-UI-input {
   box-shadow: none;
   box-sizing: border-box;
   cursor: text;
@@ -24,13 +27,20 @@
   text-overflow: ellipsis;
   line-height: 30px;
 
-  &:hover{
+  &:hover {
     border-color: rgb(50, 49, 48)
   }
-  &:focus{
-    border-color:$custom-focus-color;
+
+  &:focus {
+    border-color: $custom-focus-color;
     outline: none;
 
   }
-
+}
+  .J-UI-Icon{
+    position: absolute;
+    top:50%;
+    right: 1em;
+    transform: translateY(-50%);
+  }
 }
