@@ -50,4 +50,9 @@ describe("render input Proper",()=>{
     const wrapper = mount(<Input maxLength={3} />);
     expect(wrapper).toMatchSnapshot();
   });
+  it('should support Icons', () => {
+
+    const wrapper = mount(<Input maxLength={3} iconProps={{iconName:"Calendar",USEMsFabricIcon:true}} />);
+    expect(wrapper).toMatchSnapshot();
+  });
 })

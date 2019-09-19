@@ -14,6 +14,41 @@ exports[`render input Proper mount correct 1`] = `
 </Input>
 `;
 
+exports[`render input Proper should support Icons 1`] = `
+<Input
+  iconProps={
+    Object {
+      "USEMsFabricIcon": true,
+      "iconName": "Calendar",
+    }
+  }
+  maxLength={3}
+>
+  <span
+    className="J-UI-input-wrapper"
+  >
+    <input
+      className="J-UI-input"
+      maxLength={3}
+      onChange={[Function]}
+      value=""
+    />
+    <Icon
+      USEMsFabricIcon={true}
+      iconName="Calendar"
+    >
+      <HTMLComponent
+        iconName="Calendar"
+      >
+        <i
+          className="ms-Icon ms-Icon--Calendar J-UI-Icon"
+        />
+      </HTMLComponent>
+    </Icon>
+  </span>
+</Input>
+`;
+
 exports[`render input Proper should support maxLength 1`] = `
 <Input
   maxLength={3}
