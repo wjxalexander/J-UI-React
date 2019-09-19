@@ -55,4 +55,14 @@ describe("render input Proper",()=>{
     const wrapper = mount(<Input maxLength={3} iconProps={{iconName:"Calendar",USEMsFabricIcon:true}} />);
     expect(wrapper).toMatchSnapshot();
   });
+  it('should call onChange prop with input value', () => {
+    const onSearchMock = jest.fn();
+    const event = {
+      preventDefault() {},
+      target: { value: 'the-value' }
+    };
+    const component = mount(<Input onChange={onSearchMock} />);
+    component.find('input').simulate('change', event);
+    expect(onSearchMock).toHaveBeenCalledTimes(1);
+  });
 })
